@@ -5,6 +5,7 @@ public abstract class BaseState : IState
     protected StateMachine _stateMachine;
     protected CharacterData _data;
 
+    protected PlayerInput playerInput;
     protected ISpring spring;
     protected ILookAt lookAt;
 
@@ -15,6 +16,8 @@ public abstract class BaseState : IState
         _stateMachine = stateMachine;
         _data = data;
 
+        playerInput = new PlayerInput();
+
         spring = new Spring();
         lookAt = new LookAt();
 
@@ -23,6 +26,8 @@ public abstract class BaseState : IState
 
     public void OnStateBaseUpdate()
     {
+        playerInput.CheckInputs(_data);
+
         if (stanceManager.CheckForStanceChange(_data.weapons, _data.CurrentStance))
         {
             IState newState = StatePicker.GetState(stanceManager.GetCurrentStance().InitialState(), _stateMachine, _data);
@@ -40,10 +45,6 @@ public abstract class BaseState : IState
             lookAt.CheckForTarget(_data);
     }
 
-    public void OnDrawGizmos()
-    {
-        lookAt.DrawGizmo();
-    }
 
     public abstract void OnStateEnter();
     public abstract void OnStateExit();
@@ -51,4 +52,9 @@ public abstract class BaseState : IState
     public abstract void OnStateFixedUpdate();
     public abstract bool CheckTransitions();
     public abstract IStance Stance();
+
+    public virtual void OnDrawGizmos()
+    {
+        lookAt.DrawGizmo();
+    }
 }

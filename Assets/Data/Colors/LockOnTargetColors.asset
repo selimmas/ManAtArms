@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc56e3f66bb277e47b3bfcca750824a4, type: 3}
-  m_Name: SwordData
+  m_Script: {fileID: 11500000, guid: bb31801facc081641aa98b600051dbfb, type: 3}
+  m_Name: LockOnTargetColors
   m_EditorClassIdentifier: 
-  weaponType: 0
-  drawDelay: 0
-  sheathDelay: 0
-  attackRange: 1
+  detectedColor: {r: 0, g: 0, b: 0, a: 0}
+  atRangeColor: {r: 0, g: 0, b: 0, a: 0}

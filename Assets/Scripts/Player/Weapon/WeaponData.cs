@@ -9,4 +9,6 @@ public class WeaponData : ScriptableObject
 
     public float drawDelay;
     public float sheathDelay;
+
+    public float attackRange;
 }

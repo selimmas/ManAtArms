@@ -32,6 +32,12 @@ public class CharacterData : ScriptableObject
     [Header("Weapons")]
     public List<IWeapon> weapons;
 
+    [Header("ENEMIES")]
+    public bool lockOnEnabled;
+    public float lockOnRotationSpeed;
+    public LayerMask enemyLayer;
+    public float detectionRange = 3f;
+
     [Header("DEBUG")]
     public bool debugMode;
 

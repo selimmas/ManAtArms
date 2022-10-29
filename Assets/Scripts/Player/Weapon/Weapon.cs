@@ -23,4 +23,9 @@ public class Weapon : MonoBehaviour, IWeapon
     {
         return subject;
     }
+
+    public float AttackRange()
+    {
+        return _data.attackRange;
+    }
 }

@@ -23,4 +23,8 @@ MonoBehaviour:
   rotationSpeed: 4
   walkingSpeed: 10
   combatWalkingSpeed: 8
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  detectionRange: 5
   debugMode: 1
