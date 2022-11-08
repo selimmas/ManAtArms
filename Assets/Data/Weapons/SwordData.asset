@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: SwordData
   m_EditorClassIdentifier: 
   weaponType: 0
+  actionSide: 0
+  attackRange: 3
   drawDelay: 0
   sheathDelay: 0
-  attackRange: 1
+  simpleActions:
+  - {fileID: 11400000, guid: ac7a430e84c4e8446ae5e8272d690d25, type: 2}
+  - {fileID: 11400000, guid: d567eb453fdf0fe408af264e252f5d23, type: 2}
+  holdActions:
+  - {fileID: 11400000, guid: 634ea9af43a0e1b41b102cc6b2f9ef93, type: 2}

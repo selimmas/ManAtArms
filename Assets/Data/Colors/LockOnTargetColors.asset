@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb31801facc081641aa98b600051dbfb, type: 3}
   m_Name: LockOnTargetColors
   m_EditorClassIdentifier: 
-  detectedColor: {r: 0, g: 0, b: 0, a: 0}
-  atRangeColor: {r: 0, g: 0, b: 0, a: 0}
+  detectedColor: {r: 0.7490196, g: 0.6666667, b: 0.41960782, a: 1}
+  atRangeColor: {r: 0.7490196, g: 0.34509802, b: 0.42589286, a: 1}

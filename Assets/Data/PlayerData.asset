@@ -19,12 +19,15 @@ MonoBehaviour:
   rideHeight: 0.5
   springForce: 200
   dampForce: 10
-  lookAtEnabled: 1
+  lookAtEnabled: 0
   rotationSpeed: 4
   walkingSpeed: 10
   combatWalkingSpeed: 8
+  lockOnEnabled: 1
+  lockOnRotationSpeed: 3
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  detectionRange: 5
-  debugMode: 1
+  detectionRange: 10
+  debugMode: 0
+  debugText: {fileID: 0}

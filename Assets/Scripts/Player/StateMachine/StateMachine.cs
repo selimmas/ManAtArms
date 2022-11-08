@@ -1,19 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StateMachine : MonoBehaviour
 {
     [Header("GENERAL")]
     [SerializeField] private State _initialState;
     [SerializeField] private CharacterData _data;
+    [SerializeField] private Animator animator;
 
     [Header("HELPERS")]
     [SerializeField] List<Transform> groundRaycastSources;
+    [SerializeField] TextMeshProUGUI debugText;
 
     private IState _currentState;
 
     public WeaponManager _weaponManager;
+    public IActionController actionController;
 
     private void Awake()
     {
@@ -25,10 +29,14 @@ public class StateMachine : MonoBehaviour
         _data.RigidBody = GetComponent<Rigidbody>();
         _data.Gears = GetComponent<Gears>();
 
+        _data.Animator = animator;
         _data.GroundRaycastSources = groundRaycastSources;
+        _data.debugText = debugText;
 
         _weaponManager = new WeaponManager(_data);
         _weaponManager.Initialize();
+
+        actionController = new ActionController();
     }
 
     private void Start()

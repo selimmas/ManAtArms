@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ShieldGuardStanceState : BaseState
 {
-    ILockOn lockOn;
+    protected ILockOn lockOn;
 
     public ShieldGuardStanceState(StateMachine stateMachine, CharacterData data) : base(stateMachine, data)
     {
@@ -26,6 +26,13 @@ public abstract class ShieldGuardStanceState : BaseState
 
     public override void OnStateUpdate()
     {
+        if(_data.actions.Count == 0 && _stateMachine.actionController.CheckForActions())
+        {
+            _stateMachine.TransitionToState(new ShieldGuardAction(_stateMachine, _data));
+
+            return;
+        }
+
         if (CheckTransitions())
         {
             return;

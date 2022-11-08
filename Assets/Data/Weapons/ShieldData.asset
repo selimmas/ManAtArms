@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: ShieldData
   m_EditorClassIdentifier: 
   weaponType: 1
+  actionSide: 1
+  attackRange: 0
   drawDelay: 0
   sheathDelay: 0
+  simpleActions:
+  - {fileID: 11400000, guid: f811d998fc9c43743bc51fbad757c725, type: 2}
+  holdActions:
+  - {fileID: 11400000, guid: a8c71203f8ec5dd43a78d05afbde7609, type: 2}
