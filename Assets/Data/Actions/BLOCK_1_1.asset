@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: BLOCK_1_1
   m_EditorClassIdentifier: 
   trigger: BLOCK_1_1
-  duration: 0.5
+  duration: 1
+  effect: 2

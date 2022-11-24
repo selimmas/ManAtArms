@@ -73,14 +73,18 @@ public class LockOnController : ILockOn
         {
             LockOnTarget target = enemy.GetComponent<LockOnTarget>();
 
-            target.EnableTargeting();
-            target.ILookAt(_data.Subject.position);
+            if(target != null)
+            {
+                target.EnableTargeting();
+                //target.ILookAt(_data.Subject.position);
+                //target.IMoveTowards(_data.Subject.position, 2f);
 
-            float distance = Vector3.Distance(enemy.gameObject.transform.position, _data.Subject.position);
+                float distance = Vector3.Distance(enemy.gameObject.transform.position, _data.Subject.position);
 
-            SetTargetingMode(target, distance);
+                SetTargetingMode(target, distance);
 
-            enemies.Add(target);
+                enemies.Add(target);
+            }
         }
     }
 

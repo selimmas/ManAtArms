@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4032323048602572461}
   - component: {fileID: 6431405689378010873}
+  - component: {fileID: 8488809911308579783}
   m_Layer: 0
   m_Name: SWORD
   m_TagString: Untagged
@@ -46,6 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: a3e8ad0ce33c6b54babb0a2600675281, type: 2}
+--- !u!114 &8488809911308579783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019581085094635714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf90df932f956849b694720af921d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  _detector: {fileID: 8133634305455351481}
+  _attack: 0
 --- !u!1 &7364062615569418258
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,9 +73,11 @@ GameObject:
   - component: {fileID: 3085960080776643934}
   - component: {fileID: 1171572590661330514}
   - component: {fileID: 7517718251799012362}
-  - component: {fileID: 6749759116537449142}
-  m_Layer: 0
-  m_Name: Cylinder
+  - component: {fileID: 5377851574128669161}
+  - component: {fileID: 8133634305455351481}
+  - component: {fileID: 6850415886960353972}
+  m_Layer: 8
+  m_Name: GRAPHICS S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,8 +148,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6749759116537449142
-CapsuleCollider:
+--- !u!65 &5377851574128669161
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,8 +157,37 @@ CapsuleCollider:
   m_GameObject: {fileID: 7364062615569418258}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000004, y: 1.7046573, z: 1.0000002}
+  m_Center: {x: 0.0000010058284, y: -0.14767186, z: -0.0000010430813}
+--- !u!114 &8133634305455351481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364062615569418258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03eabe85723fb5a4c8b4c9eaba72de5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 5377851574128669161}
+  hurtBoxLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &6850415886960353972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7364062615569418258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f839380ee81db4db4e9969cdf00deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _active: 1
+  _owner: {fileID: 0}

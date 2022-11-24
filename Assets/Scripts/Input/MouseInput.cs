@@ -85,4 +85,6 @@ public class MouseInput
             rightActivationTime = 0;
         }
     }
+
+    
 }

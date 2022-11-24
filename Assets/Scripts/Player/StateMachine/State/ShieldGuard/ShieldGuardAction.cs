@@ -6,6 +6,7 @@ public class ShieldGuardAction : ShieldGuardWalking
 {
     private IAction _action;
     private float actionEndTime;
+    private float actionActivationTime;
 
     public ShieldGuardAction(StateMachine stateMachine, CharacterData data) : base(stateMachine, data)
     {
@@ -45,16 +46,26 @@ public class ShieldGuardAction : ShieldGuardWalking
             _action = _data.actions[0];
 
             _action.Execute(_data);
+            _action.Enable(_data);
+
             actionEndTime = Time.time + _action.Duration(_data);
+            actionActivationTime = Time.time + (_action.Duration(_data) * .3f);
         }
 
-        if(_action != null && Time.time > actionEndTime)
+        //if (_action != null && Time.time > actionActivationTime)
+        //{
+        //    _action.Enable(_data);
+        //}
+
+        if (_action != null && Time.time > actionEndTime)
         {
+            _action.Disable(_data);
+                
             _action = null;
             _data.actions.RemoveAt(0);
         }
 
-        if (_data.debugMode)
+        if (_data.debugMode && _data.debugText != null)
         {
             _data.debugText.text = "";
 

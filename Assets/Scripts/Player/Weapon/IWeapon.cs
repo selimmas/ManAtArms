@@ -8,4 +8,5 @@ public interface IWeapon
     public ActionSide Side { get; set; }
     public string Trigger(ActionType type);
     public float ActionDuration(ActionType type);
+    public ActionData CurrentAction { get; set; }
 }

@@ -34,6 +34,28 @@ public class Action : IAction
         }
     }
 
+    public void Enable(CharacterData data)
+    {
+        foreach (IWeapon weapon in data.weapons)
+        {
+            if (weapon.Side == side)
+            {
+                weapon.Subject().GetComponent<HitResponder>()._attack = true;
+            }
+        }
+    }
+
+    public void Disable(CharacterData data)
+    {
+        foreach (IWeapon weapon in data.weapons)
+        {
+            if (weapon.Side == side)
+            {
+                weapon.Subject().GetComponent<HitResponder>()._attack = false;
+            }
+        }
+    }
+
     public override string ToString()
     {
         return side.ToString().Substring(0,1) + type.ToString().Substring(0,1);

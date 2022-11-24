@@ -36,6 +36,13 @@ public class LockOnTarget : MonoBehaviour, ILockOnTarget
         transform.LookAt(position);
     }
 
+    public void IMoveTowards(Vector3 position, float speed)
+    {
+        float step = speed * Time.deltaTime;
+
+        transform.position = Vector3.MoveTowards(transform.position, position, step);
+    }
+
     public void setMode(int mode)
     {
         switch(mode)

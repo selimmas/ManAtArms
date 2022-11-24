@@ -20,6 +20,13 @@ public class ShieldGuardWalking : ShieldGuardStanceState
         return false;
     }
 
+    public override void OnStateUpdate()
+    {
+        base.OnStateUpdate();
+
+        _data.actions.Clear();
+    }
+
     public override void OnStateEnter()
     {
     }

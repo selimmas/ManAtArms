@@ -9,8 +9,12 @@ public class Weapon : MonoBehaviour, IWeapon
     private Transform subject;
     private int simpleActionIndex;
     private int holdActionIndex;
+    private ActionData currentAction;
 
     public ActionSide Side { get => _data.actionSide; set => _data.actionSide = value; }
+    public ActionData CurrentAction { get => currentAction; set => currentAction = value; }
+
+    HitResponder hitResponder;
 
     public WeaponType WeaponType()
     {
@@ -21,6 +25,7 @@ public class Weapon : MonoBehaviour, IWeapon
     void Awake()
     {
         subject = GetComponent<Transform>();
+        hitResponder = GetComponent<HitResponder>();
     }
 
     public Transform Subject()
@@ -38,9 +43,11 @@ public class Weapon : MonoBehaviour, IWeapon
         switch (type)
         {
             case ActionType.SIMPLE:
-                return GetSimpleAction().trigger;
+                CurrentAction = GetSimpleAction();
+                return CurrentAction.trigger;
             case ActionType.HOLD:
-                return GetHoldAction().trigger ;
+                CurrentAction = GetHoldAction();
+                return CurrentAction.trigger ;
             default:
                 return null;
         }

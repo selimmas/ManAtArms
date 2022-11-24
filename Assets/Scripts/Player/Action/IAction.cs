@@ -16,4 +16,6 @@ public interface IAction
     public ActionSide Side { get; set; }
     public float Duration(CharacterData data);
     public void Execute(CharacterData data);
+    public void Enable(CharacterData data);
+    public void Disable(CharacterData data);
 }

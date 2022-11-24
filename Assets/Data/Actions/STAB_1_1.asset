@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: STAB_1_1
   duration: 0.5
+  effect: 1

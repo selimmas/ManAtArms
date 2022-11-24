@@ -31,6 +31,13 @@ public class ShieldGuardIdle : ShieldGuardStanceState
         }
     }
 
+    public override void OnStateUpdate()
+    {
+        base.OnStateUpdate();
+        
+        _data.actions.Clear();
+    }
+
     public override void OnStateFixedUpdate()
     {
 

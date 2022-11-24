@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9210274785019132525}
   - component: {fileID: 4723334054621793239}
-  m_Layer: 0
+  - component: {fileID: 2937447204628066206}
+  m_Layer: 8
   m_Name: SHIELD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +47,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 99be12755498cea4dbe527af3c624859, type: 2}
+--- !u!114 &2937447204628066206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5299782406309430302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faf90df932f956849b694720af921d1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 0}
+  _detector: {fileID: 2124281205029036211}
+  _attack: 0
 --- !u!1 &6186070562792554658
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,9 +73,11 @@ GameObject:
   - component: {fileID: 8525924809735349279}
   - component: {fileID: 3351291796257226243}
   - component: {fileID: 1871539227958055935}
-  - component: {fileID: 3344702055562215588}
-  m_Layer: 0
-  m_Name: Cylinder
+  - component: {fileID: 7477049715503742995}
+  - component: {fileID: 2124281205029036211}
+  - component: {fileID: 6141012257143811}
+  m_Layer: 8
+  m_Name: GRAPHICS SH
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,8 +148,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3344702055562215588
-CapsuleCollider:
+--- !u!65 &7477049715503742995
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -139,8 +157,37 @@ CapsuleCollider:
   m_GameObject: {fileID: 6186070562792554658}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.85, y: 2.0000005, z: 0.85}
+  m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940699}
+--- !u!114 &2124281205029036211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186070562792554658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03eabe85723fb5a4c8b4c9eaba72de5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 7477049715503742995}
+  hurtBoxLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!114 &6141012257143811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6186070562792554658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f839380ee81db4db4e9969cdf00deb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _active: 1
+  _owner: {fileID: 5299782406309430302}

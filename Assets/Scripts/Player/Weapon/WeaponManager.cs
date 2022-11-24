@@ -45,6 +45,10 @@ public class WeaponManager : IWeaponManager
                 {
                     GameObject weaponObject = gears.InstanciateWeapon(weaponPrefab, weaponHolderTransform);
 
+                    HitResponder hitResponder = weaponObject.GetComponent<HitResponder>();
+
+                    hitResponder.owner = gears.gameObject;
+
                     Equip(weaponObject.GetComponent<Weapon>());
                 }
             }
