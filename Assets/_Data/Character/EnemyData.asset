@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36b4703dec7509c45949a1c695f1e2e8, type: 3}
-  m_Name: AllyData
+  m_Name: EnemyData
   m_EditorClassIdentifier: 
   springEnabled: 1
   groundMask:
     serializedVersion: 2
     m_Bits: 1
-  rideHeight: 0.5
+  rideHeight: 0.6
   springForce: 200
   dampForce: 10
   lookAtEnabled: 0
-  rotationSpeed: 0
+  rotationSpeed: 4
   walkingSpeed: 0
   combatWalkingSpeed: 0
   lockOnEnabled: 0
@@ -29,5 +29,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   detectionRange: 3
-  debugMode: 0
+  debugMode: 1
   debugText: {fileID: 0}

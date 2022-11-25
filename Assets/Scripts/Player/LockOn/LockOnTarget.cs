@@ -8,6 +8,7 @@ public class LockOnTarget : MonoBehaviour, ILockOnTarget
     [SerializeField] GameObject _targetHelper;
 
     private Transform _subject;
+    public int _mode;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,8 @@ public class LockOnTarget : MonoBehaviour, ILockOnTarget
 
     public void setMode(int mode)
     {
+        _mode = mode;
+
         switch(mode)
         {
             case ILockOnTarget.TARGET_MODE_DETECTED:_targetHelper.GetComponentInChildren<Renderer>().material.color = _colors.detectedColor; break;

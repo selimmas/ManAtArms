@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponType: 0
   actionSide: 0
-  attackRange: 3
+  attackRange: 6
   drawDelay: 0
   sheathDelay: 0
   simpleActions:

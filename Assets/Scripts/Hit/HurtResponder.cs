@@ -17,7 +17,7 @@ public abstract class HurtResponder : MonoBehaviour, IHurtResponder
             hurtBox.HurtResponder = this;
         }
 
-        Debug.Log(gameObject + " : " + _hurtBoxes.Count);
+        //Debug.Log(gameObject + " : " + _hurtBoxes.Count);
     }
 
     public bool CheckHit(HitData hitData)

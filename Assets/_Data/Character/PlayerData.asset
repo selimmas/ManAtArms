@@ -16,10 +16,10 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1
-  rideHeight: 0.5
+  rideHeight: 0.6
   springForce: 200
   dampForce: 10
-  lookAtEnabled: 0
+  lookAtEnabled: 1
   rotationSpeed: 4
   walkingSpeed: 10
   combatWalkingSpeed: 8

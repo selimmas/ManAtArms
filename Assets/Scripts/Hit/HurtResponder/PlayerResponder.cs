@@ -8,7 +8,7 @@ public class PlayerResponder : HurtResponder
     {
         if(hitData.attacker != gameObject)
         {
-            Debug.Log("PLAYER [attacker: " + hitData.attacker + " | hurtBox: " + hitData.hurtBox + " | action: " + hitData.action + " ]");
+            //Debug.Log("PLAYER [attacker: " + hitData.attacker + " | hurtBox: " + hitData.hurtBox + " | action: " + hitData.action + " ]");
         }
 
         //Debug.Log("kill");
